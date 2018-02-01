@@ -25,7 +25,7 @@ class EventAdmin(AllTranslationsMixin, FrontendEditableAdminMixin, PlaceholderAd
     form = EventAdminForm
     search_fields = ('translations__title', )
     list_display = (
-        'title', 'start_date', 'start_time', 'end_date', 'end_time',
+        'title', 'start_date', 'start_time', 'end_date', 'end_time', 'gather_datetime',
         'location', 'is_published', 'app_config',
     )
     list_editable = ('is_published', 'app_config', )
@@ -45,6 +45,7 @@ class EventAdmin(AllTranslationsMixin, FrontendEditableAdminMixin, PlaceholderAd
             'location',
             ('start_date', 'start_time',),
             ('end_date', 'end_time',),
+            'gather_datetime',
         )}),
         (_('Advanced'), {
             'classes': ('collapse',),

@@ -40,7 +40,9 @@ class Event(TranslatedAutoSlugifyMixin,
     start_time = models.TimeField(_('start time'), null=True, blank=True)
     end_date = models.DateField(_('end date'), null=True, blank=True)
     end_time = models.TimeField(_('end time'), null=True, blank=True)
+    gather_datetime = models.DateTimeField(_('gather when'), null=True, blank=True)
     # TODO: add timezone (optional and purely for display purposes)
+    # TODO: Any reason to not consolidate _date and _time fields all into one field? Would make atomic sorting simpler - and hand-typed entry into one field simpler?
 
     is_published = models.BooleanField(
         _('is published'), default=True,

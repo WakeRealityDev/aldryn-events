@@ -59,6 +59,12 @@
                 <span class="location">{{ event.location }}</span>
                 <span class="date_format">MM/DD/YYYY</span>
             </a>
+
+            {% if event.gather_datetime %}
+                <p>
+                – Gather {{ event.gather_datetime }}
+                </p>
+            {% endif %}
         </p>
     </div>
 
@@ -66,6 +72,12 @@
         <div class="lead">
             {% render_model event "short_description" "short_description" "" "truncatewords:'25'" %}
         </div>
+        {% if event.social_media %}
+            <div class="content event-social-media">
+                <hr style="height: 3px; color: red" />
+                <p>social media goes here</p>
+            </div>
+        {% endif %}
     {% endif %}
 
     {% if detail_view %}

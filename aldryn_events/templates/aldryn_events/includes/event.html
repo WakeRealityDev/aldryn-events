@@ -56,6 +56,12 @@
     {% endif %}
 
     {% if detail_view %}
+        <h2>Gather</h2>
+
+		{% if event.gather_datetime %}
+			 – Gather {{ event.gather_datetime }}
+			 <br />
+		{% endif %}
         {% render_placeholder event.description %}
     {% endif %}
 </article>
