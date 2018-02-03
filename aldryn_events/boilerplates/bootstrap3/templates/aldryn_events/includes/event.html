@@ -72,17 +72,17 @@
         <div class="lead">
             {% render_model event "short_description" "short_description" "" "truncatewords:'25'" %}
         </div>
-        {% if event.social_media %}
-            <div class="content event-social-media">
-                <hr style="height: 3px; color: red" />
-                <p>social media goes here</p>
-            </div>
-        {% endif %}
     {% endif %}
 
     {% if detail_view %}
         <div class="content">
             {% render_placeholder event.description %}
+
+            {% if event.social_media %}
+				<hr class="event-social-media-line" />
+				<h2 class="event-social-media-head">{% trans 'Social Media' %}</h2>
+					{{ event.social_media }}
+            {% endif %}
         </div>
     {% endif %}
 </article>
