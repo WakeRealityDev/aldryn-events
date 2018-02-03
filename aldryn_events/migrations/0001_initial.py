@@ -38,7 +38,6 @@ class Migration(migrations.Migration):
                 ('enable_registration', models.BooleanField(default=False, verbose_name='enable event registration')),
                 ('registration_deadline_at', models.DateTimeField(default=None, null=True, verbose_name='allow registartion until', blank=True)),
                 ('description', cms.models.fields.PlaceholderField(slotname='aldryn_events_event_description', editable=False, to='cms.Placeholder', null=True, verbose_name='description', related_name='description')),
-                ('social_media', cms.models.fields.PlaceholderField(slotname='aldryn_events_event_social_media', editable=False, to='cms.Placeholder', null=True, verbose_name='social_media', related_name='social_media')),
             ],
             options={
                 'ordering': ('start_date', 'start_time', 'end_date', 'end_time'),
@@ -77,6 +76,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(help_text='translated', max_length=150, verbose_name='title')),
                 ('short_description', djangocms_text_ckeditor.fields.HTMLField(default='', help_text='translated', verbose_name='short description', blank=True)),
+                ('social_media', djangocms_text_ckeditor.fields.HTMLField(default='', help_text='translated', verbose_name='social media', blank=True)),
                 ('location', models.TextField(default='', verbose_name='location', blank=True)),
                 ('location_lat', models.FloatField(null=True, verbose_name='location latitude', blank=True)),
                 ('location_lng', models.FloatField(null=True, verbose_name='location longitude', blank=True)),
