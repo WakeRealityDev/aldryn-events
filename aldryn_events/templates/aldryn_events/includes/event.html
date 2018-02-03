@@ -62,6 +62,15 @@
 			 – Gather {{ event.gather_datetime }}
 			 <br />
 		{% endif %}
+
+        <h2>Social Media</h2>
+
+		{% if event.social_media %}
+			 – Social Media {{ event.social_media }}
+			 <br />
+		{% endif %}
+
+
         {% render_placeholder event.description %}
     {% endif %}
 </article>

@@ -72,6 +72,9 @@ class Event(TranslatedAutoSlugifyMixin,
     description = PlaceholderField(
         'aldryn_events_event_description', verbose_name=_('description'),
     )
+    social_media = PlaceholderField(
+        'aldryn_events_event_social_media', verbose_name=_('social_media'),
+    )
 
     translations = TranslatedFields(
         title=models.CharField(
